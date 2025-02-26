@@ -95,29 +95,41 @@ final class Microwave {
                                         (PIZZA_TIME * ((numItem - 1)) * 0.5)
                                 + PIZZA_TIME;
 
+                                // Convert the time it takes to heat up pizza
+                                // from seconds to minutes and seconds
+                                int minutes = ((int) timePizza) / 60;
+                                double seconds =
+                                (double) timePizza - (60 * (double) minutes);
+
                                 // Display the time it takes
                                 // to heat up user's pizza(s)
                                 System.out.println(
-                                        "It will take "
-                                        + String.format("%.2f", timePizza)
+                                        "It will take " + minutes
+                                        + " minutes and "
+                                        + String.format("%.2f", seconds)
                                         + " seconds to heat up "
                                         + numItem + " pizza(s)."
                                     );
-
                             // If the user chooses sub
                             } else if (userItem.equals("sub")) {
-
                                 // Calculate the time it takes
                                 // to heat up user's sub(s)
                                 double timeSub =
                                     SUB_TIME * ((numItem - 1) * 0.5)
                                     + SUB_TIME;
 
+                                // Convert the time it takes to heat up pizza
+                                // from seconds to minutes and seconds
+                                int minutes = ((int) timeSub) / 60;
+                                double seconds =
+                                (double) timeSub - (60 * (double) minutes);
+
                                 // Display the time it takes
                                 // to heat up user's sub(s)
                                 System.out.println(
-                                        "It will take "
-                                        + String.format("%.2f", timeSub)
+                                        "It will take " + minutes
+                                        + " minutes and "
+                                        + String.format("%.2f", seconds)
                                         + " seconds to heat up "
                                         + numItem + " sub(s)."
                                     );
@@ -130,19 +142,24 @@ final class Microwave {
                                     SOUP_TIME * ((numItem - 1) * 0.5)
                                     + SOUP_TIME;
 
+                                // Convert the time it takes to heat up pizza
+                                // from seconds to minutes and seconds
+                                int minutes = ((int) timeSoup) / 60;
+                                double seconds =
+                                (double) timeSoup - (60 * (double) minutes);
+
                                 // Display the time it takes
                                 // to heat up user's soup(s)
                                 System.out.println(
-                                        "It will take "
-                                        + String.format("%.2f", timeSoup)
+                                        "It will take " + minutes
+                                        + " minutes and "
+                                        + String.format("%.2f", seconds)
                                         + " seconds to heat up "
                                         + numItem + " soup(s)."
                                     );
                             }
-
                             // Break from numItem loop
                             break;
-
                         } else {
                             // If user enters an invalid number of items
                             System.out.println(
@@ -151,7 +168,6 @@ final class Microwave {
                                     + "Try again."
                                 );
                         }
-
                     } catch (Exception exception) {
                         // If the user does not enter a number
                         System.out.println("Please enter a number.");
@@ -162,13 +178,10 @@ final class Microwave {
                         scanner.nextLine();
                     }
                 }
-
                 // Keep looping while input is still invalid
                 while (true);
-
                 // Break from userItem loop
                 break;
-
             } else {
                 // If the user does not enter a valid food item
                 System.out.println(
